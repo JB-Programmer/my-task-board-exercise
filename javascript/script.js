@@ -6,7 +6,7 @@ var mybutton = document.getElementById("mybutton");   //Button
 var notValidDateSpan = document.getElementById("dateError");    //Space for the dateError
 var notValidNote = document.getElementById("noteError");    //Space for the note error
 
-var postitPlace = document.getElementById("postitList"); //Space for the Post It
+var postitPlace = document.getElementById("postitList"); //Space in the HTML for the Post It
 
 
 //Valid Regex DD/MM/YYYY
@@ -27,7 +27,6 @@ var Note = function (noteText, noteDate, importance_level, idVirtual) {
     this.importance_level = importance_level;
     this.idVirtual = idVirtual;
 };
-
 
 
 function dateValidation(date) {
@@ -139,10 +138,13 @@ function resetForm() {
 var idDeleted;
 var postItToDelete;
 function removePostIt() {
+    "use Strict"
     //Detect and save the ID of the clicked parent Element
     idDeleted = this.parentElement.getAttribute("id");
     postItToDelete = document.getElementById(idDeleted);
+    //Animation to hide through opacity
     postItToDelete.className += " deletingNOW";
+    //Function that remove the div from the HTML, with a delay =  duration of the animation
     setTimeout(removeElement, 1000);
     function removeElement() {
         postItToDelete.parentElement.removeChild(postItToDelete);
@@ -151,7 +153,7 @@ function removePostIt() {
 
 //Removing the object from the array
 function removeFromArray() {
-    'use strict';
+    "use strict";
     var j;
     for (j = 0; j < noteArray.length; j += 1) {  //I need to find which position in array ocuppies the postIt removed. (id of the div = idVirtualproperty); 
         if (noteArray[j].idVirtual == idDeleted) {
@@ -159,18 +161,21 @@ function removeFromArray() {
             noteArray.splice(j, 1);
         }
     }
-    saveToLocalStorage(noteArray);
+    saveToLocalStorage(noteArray); //EXPLICAR POR QUE ALMACENO TODO Y NO UNA A UNA
 }
+
+
 
 //Save notes in Local Storage
 var lastSessionNoteArrayString;
 function saveToLocalStorage(a) {
     lastSessionNoteArrayString = JSON.stringify(a);
     localStorage.setItem("lastSessionNoteArrayJSON", lastSessionNoteArrayString);
-    return a;
 }
 
-//Get notes from Local Storage
+
+
+//Get notes from Local Storage. I decided to save it in an unique string, and not each note in a different string so as to preserve the order when I send them to the HTML and when I add new not after getting the last notes from the HTML.
 var lastNoteArrayString;
 var lastNoteArrayParse;
 var lastIdNo;

@@ -24,40 +24,40 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <header>
-                    <img src="img/title.png" class="img-responsive center-block" alt="my_task_board">
-            </header>
+    <header>
+        <div class="container">
+            <div class="row">
+                        <img src="img/title.png" class="img-responsive center-block" alt="my_task_board">
+            </div>
         </div>
-    </div>
+    </header>
 
-    <form novalidate>
-
-        <div class="container" id="theForm">
+    <div class="container" id="theForm">
+        <form novalidate>
                 <div class="form-row">
-                        <div id="title" class="brownText">To do note</div>
-                        <div  class="col-7" id="inputBox">    
+                    <div  class="col-3 form-group need-centered"> 
+                            <p id="title" class="brownText need-centered">To do note</p>
                             <textarea name="textInput" class="form-control" id="inputText" placeholder="What do you have to do?" required></textarea>
-                            <div class="error" id = "noteError">Please, enter a note</div>
-                        </div>
+                            <div class="error need-centered" id = "noteError">Please, enter a note</div>
+                    </div>
                 </div>
                 
-                <div class="form-row">
-                    <div  class="col-3 form-group" id="divDateBox">    
-                        <label for="dateBox" class="form-check"><h3 class="brownText">Limit Task Date</h3></label>
+                <div class="form-row need-centered">
+                    <div  class="form-group" id="divDateBox">    
+                        <label for="dateBox" class="form-check brownText">Limit Task Date</label>
                 <!--I didnt use type="date" because that automatically doesnt allow letters and invalid days, months or years numbers -->
-                        <input id="dateBox" type="text" name="dateBox" class="dateBoxx form-control form-control-lg"  placeholder="dd/mm/yyyy">
-                        <div class="error" id = "dateError" required>Please, enter a correct date DD/MM/YYYY</div>
+                        <input id="dateBox" type="text" name="dateBox" class="dateBoxx form-control form-control-lg need-centered"  placeholder="dd/mm/yyyy" required>
+                        <p class="error need-centered" id = "dateError">Please, enter a correct date DD/MM/YYYY</p>
                      </div>
                 </div>
                 
-                <div class="form-row form-check" id="divDetailsBox">
-                        <h3 id="importanceLevel" class="brownText">Importance Level</h3>
+                <div class="need-centered" id="divDetailsBox">
+                        <p id="importanceLevel" class="brownText">Importance Level</p>
+                    <div class="form-check">
                         <label for="normalImp" class="form-check-label brownText smallerText">
-                                <input id="normalImp" type="radio" value="Not very important" name="importance" class="mx-auto" checked="checked">Not very important
+                        <input id="normalImp" type="radio" value="Not very important" name="importance" class="mx-auto" checked="checked">Not very important
                         </label>  
-                          
+                    </div> 
                     <div class="form-check">
                         <label for="veryImp" class="form-check-label brownText smallerText"> 
                                 <input id="veryImp" type="radio" value="Very Important" name="importance" class="mx-auto">Very Important
@@ -66,21 +66,18 @@
                 </div>
 
             
-                <div class="form-row align-items-center" id="divMyButton">
-                    <div class="col-auto">
+                <div class="form-row need-centered" id="divMyButton">
                     <button class="btn btn-primary" id="mybutton">Send</button>
                 </div>
-                </div>
-            </div>
 
-    </form>
+        </form>
+    </div>
+
     
     <div class="container" id="postitList">
     </div>
     
-
-     
-   
+ 
     
     
     
