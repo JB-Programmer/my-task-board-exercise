@@ -1,0 +1,118 @@
+/*
+ ordenar los keyvalues logicamente
+ cambiar los colores por numeros
+
+*/
+#theForm {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 5px solid rgba(153, 76, 0, 0.7);
+    width: 750px;
+}
+
+body {
+    background-image: url("images/tile.jpg");
+    background-repeat: repeat;
+}
+
+
+#inputText {
+    height: 140px;
+    width: 600px;
+    border: none;
+    background-image: url("images/formbg.jpg");
+    background-repeat: repeat-y;
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    line-height: 1.15em;
+    color: rgba(4, 83, 220, 1);
+    padding-top: 12px;
+    padding-left: 80px;
+}
+
+#divMyButton , #inputText, #dateBox, #title, #dateError, #inputBox, #noteError, #divDetailsBox, h3, #divDateBox {
+    margin: 1px auto;
+    text-align: center;
+}
+
+#dateBox {
+    width: 100px;
+}
+
+
+.brownText {
+    font-family: fantasy;
+    font-size: 30px;
+    color: rgba(102, 51, 0, 0.9);
+}
+
+.smallerText {
+    font-size: 20px;
+    font-weight: 50;
+}
+
+.thePostIt {
+    height: 260px;
+    width: 200px;
+    background-image: url(images/notebg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0; 
+    transition: opacity 1s;
+    padding: 20px;
+}
+
+
+.thePostItImportant {
+    background-image: url(images/notebg-red.png);
+}
+
+.theNoteInside {
+    height: 170px;
+    margin-top: 15px;
+    margin-right: 5px;
+    word-wrap: break-word;
+    overflow: auto;
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+    color: darkblue;
+}
+
+.theDateInside {
+    font-size: 90%;
+    font-weight: 700;
+    max-width: 150px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.trashButtonD {
+    visibility: hidden;  
+    color: rgba(0, 0, 0, 0.70);
+}
+
+.thePostIt:hover .trashButtonD {
+    visibility: visible;
+    text-align: right;
+}
+
+.error {
+    background: rgba(255, 0, 0, 0.3);
+    font-weight: 700;
+    visibility: hidden;
+    width: 350px;
+    text-align: center;
+}
+
+.deleting {
+    transition: opacity 1s;
+}
+
+@keyframes example {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+.deletingNOW {
+    animation-name: example;
+    animation-duration: 1s;
+}
